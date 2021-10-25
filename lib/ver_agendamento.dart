@@ -1,24 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/solicitacao.dart';
-import 'package:flutter_application_1/dart/pacote.dart';
-
 
 String data = '10/08/2021';
 String data1 = '10/11/2021';
 
-class ViewPage extends StatelessWidget {
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.white),
+      title: "Vacinaí",
+      home: AgendPage(),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: buildAppBar(),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: SingleChildScrollView(
-                  child: Column(
+    );
+  }
+}
+
+class AgendPagePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.deepPurple,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: BackButton(),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            top: 0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(32),
+                topRight: Radius.circular(32)
+              ),
+            child: Container(
+              color: Colors.white,
+              padding: EdgeInsets.fromLTRB(16, 32, 16, 32),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   ListTile(
                     leading: Icon(Icons.person),
@@ -48,62 +75,63 @@ class ViewPage extends StatelessWidget {
                     },
                     selected: true,
                   ),
-                ],
-              )),
-            ),
-            Container(
-                height: 50,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomRight,
-                    end: Alignment.topLeft,
-                    colors: [Color(0xFFDA97FF), Color(0xFF138AB6)],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4),
-                  ),
-                ),
-                child: SizedBox.expand(
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AgendPage()),
-                      );
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 25),
-                          child: Text(
-                            "Alterar dados",
-                            style: TextStyle(
+                  Container(
+                    height: 50,
+                    alignment: Alignment.centerLeft,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                      begin: Alignment.bottomRight,
+                      end: Alignment.topLeft,
+                      colors: [Color(0xFFDA97FF), Color(0xFF138AB6)],
+                   ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(4),
+                    ),
+                    ),
+                    child: SizedBox.expand(
+                      child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AgendPage()),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left: 25),
+                            child: Text(
+                              "Alterar dados",
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                                 fontSize: 18),
-                            textAlign: TextAlign.left,
+                                textAlign: TextAlign.left,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 25),
-                          child: Icon(
-                            Icons.trending_flat,
-                            color: Colors.white,
+                          Padding(
+                            padding: EdgeInsets.only(right: 25),
+                            child: Icon(
+                              Icons.trending_flat,
+                              color: Colors.white,
+                            ),
                           ),
-                        )
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                )),
-          ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
-    );
+    ],
+  ),
+  );
   }
 }
-
 buildAppBar() {
   return AppBar(
     title: Text('VER AGENDAMENTO'),
@@ -112,9 +140,7 @@ buildAppBar() {
     toolbarHeight: 80,
     leading: IconButton(
       icon: Icon(Icons.arrow_back),
-      onPressed: () {
-        
-      },
+      onPressed: () {},
     ),
     flexibleSpace: Container(
       decoration: BoxDecoration(
@@ -122,7 +148,8 @@ buildAppBar() {
         colors: [Color(0xFFDA97FF), Color(0xFF138AB6)],
         begin: Alignment.bottomRight,
         end: Alignment.topLeft,
-      )),
+        ),
+      ),
     ),
   );
 }
