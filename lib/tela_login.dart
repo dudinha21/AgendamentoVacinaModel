@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/op_agendamento.dart';
 import 'package:flutter_application_1/infos.dart';
-import 'package:flutter/data/pacote.dart';
+import 'package:flutter_application_1/data/pacote.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
