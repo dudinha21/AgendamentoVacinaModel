@@ -1,5 +1,5 @@
 import 'package:flutter_application_1/op_agendamento.dart';
-import 'package:flutter_application_1/data/database.dart.dart';
+import 'package:flutter_application_1/data/database.dart';
 import 'package:sqflite/sqflite.dart';
 
 class FuncoesDao {
