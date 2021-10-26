@@ -22,6 +22,9 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  path:
+  sqflite:
+  google_fonts: ^2.1.0
   flutter:
     sdk: flutter
 
