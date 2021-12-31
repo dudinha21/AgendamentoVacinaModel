@@ -1,9 +1,17 @@
+import 'package:app_agendamento_vacina/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/tela_login.dart';
+import 'package:provider/provider.dart';
+import 'my_app.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: HomePage(),
-    theme: ThemeData(primarySwatch: Colors.blue),
-  ));
+  runApp(
+    MaterialApp(
+      title: 'AgendamentoVacina',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+      home: HomePage(),
+    ),
+  );
 }
