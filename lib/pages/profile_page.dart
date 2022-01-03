@@ -30,14 +30,35 @@ class _ProfilePageState extends State<ProfilePage> {
             imagePath: usuario.imagePath,
             onClicked: () async {},
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12),
           buildName(usuario),
-          const SizedBox(height: 18),
+          const SizedBox(height: 15),
           Center(child: buildUpgradeButton()),
-          const SizedBox(height: 18),
+          const SizedBox(height: 15),
           InfosWidget(),
           const SizedBox(height: 20),
           buildEndereco(usuario),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 24),
+            child: OutlinedButton(
+              onPressed: () => context.read<AuthService>().logout(),
+              style: OutlinedButton.styleFrom(
+                primary: Colors.red,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      'Sair',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -68,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Cidade',
+          'Cidade:',
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 5),
