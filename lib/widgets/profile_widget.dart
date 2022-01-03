@@ -17,7 +17,7 @@ class ProfileWidget extends StatelessWidget {
     final color = Theme.of(context).colorScheme.primary;
 
     return Container(
-      margin: EdgeInsets.only(top: 30.0),
+      margin: EdgeInsets.only(top: 20.0),
       child: Center(
         child: Stack(
           children: [
