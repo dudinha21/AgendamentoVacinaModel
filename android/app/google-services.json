@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "680327812167",
+    "project_id": "agendamento-vacina-dd216",
+    "storage_bucket": "agendamento-vacina-dd216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680327812167:android:74456883b1500995374d62",
+        "android_client_info": {
+          "package_name": "com.example.agendamento_vacina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680327812167-d53nsol0uqjkbfs1s7g10aai3josh7go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9tFov8OEBTI8pBOp-jWKonrbC2ZNjQi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680327812167-d53nsol0uqjkbfs1s7g10aai3josh7go.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
