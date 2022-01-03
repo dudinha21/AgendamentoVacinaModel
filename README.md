@@ -1,4 +1,13 @@
-# agendamento_vacina
+# Agendamento de vacinação
+
+# Equipe
+- Ana Clara
+- Mariana Fernandes
+- Maria Eduarda Teixeira
+- Marya Eduardha
+- Renilson José
+- Vivianne Costa
+# 913
 
 A new Flutter project.
 
