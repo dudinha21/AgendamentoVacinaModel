@@ -1,11 +1,11 @@
 import 'dart:js';
-import 'package:agendamento_vacina/models/usuario.dart';
-import 'package:agendamento_vacina/repositories/usuario_repository.dart';
-import 'package:agendamento_vacina/services/auth_service.dart';
-import 'package:agendamento_vacina/widgets/appbar_widget.dart';
-import 'package:agendamento_vacina/widgets/button_widget.dart';
-import 'package:agendamento_vacina/widgets/infos_widget.dart';
-import 'package:agendamento_vacina/widgets/profile_widget.dart';
+import 'package:vacinai_app/models/usuario.dart';
+import 'package:vacinai_app/repositories/usuario_repository.dart';
+import 'package:vacinai_app/services/auth_service.dart';
+import 'package:vacinai_app/widgets/appbar_widget.dart';
+import 'package:vacinai_app/widgets/button_widget.dart';
+import 'package:vacinai_app/widgets/infos_widget.dart';
+import 'package:vacinai_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
