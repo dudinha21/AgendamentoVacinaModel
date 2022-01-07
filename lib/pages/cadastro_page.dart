@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:vacinai_app/pages/perfil_page.dart';
+import 'package:vacinai_app/pages/profile_page.dart';
 
 class CadastroPage extends StatefulWidget {
   final Function toggleScreen;
