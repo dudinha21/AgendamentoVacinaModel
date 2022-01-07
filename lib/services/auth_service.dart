@@ -1,61 +1,71 @@
+//CÓDIGO ANTERIOR
+/*
+
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
-class AuthException implements Exception {
-  String message;
-  AuthException(this.message);
-}
+class AuthService with ChangeNotifier {
+  bool _isLoading = false;
+  late String _errorMessage;
+  bool get isLoading => _isLoading;
+  String get errorMessage => _errorMessage;
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-class AuthService extends ChangeNotifier {
-  FirebaseAuth _auth = FirebaseAuth.instance;
-  User? usuario;
-  bool isLoading = true;
-
-  AuthService() {
-    _authCheck();
-  }
-
-  _authCheck() {
-    _auth.authStateChanges().listen((User? user) {
-      usuario = (user == null) ? null : user;
-      isLoading = false;
-      notifyListeners();
-    });
-  }
-
-  _getUser() {
-    usuario = _auth.currentUser;
+  Future cadastro(String email, String senha) async {
+    setLoading(true);
+    try {
+      UserCredential authResult = await firebaseAuth
+          .createUserWithEmailAndPassword(email: email, password: senha);
+      User? user = authResult.user;
+      setLoading(false);
+      return user;
+    } on SocketException {
+      setLoading(false);
+      setMessage("Não há conexão com a internet");
+    } catch (e) {
+      setLoading(false);
+      setMessage(_errorMessage);
+    }
     notifyListeners();
   }
 
-  registrar(String cpf, String senha) async {
+  Future login(String email, String senha) async {
+    setLoading(true);
     try {
-      await _auth.createUserWithEmailAndPassword(email: cpf, password: senha);
-      _getUser();
-    } on FirebaseAuthException catch (e) {
-      if(e.code == 'weak-passowrd') {
-        throw AuthException('Senha muito fraca!');
-      } else if (e.code == 'email-already-in-use') {
-        throw AuthException('Este cpf já está cadastrado');
-      }
+      UserCredential authResult = await firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: senha);
+      User? user = authResult.user;
+      setLoading(false);
+      return user;
+    } on SocketException {
+      setLoading(false);
+      setMessage("Não há conexão com a internet");
+    } catch (e) {
+      setLoading(false);
+      setMessage(_errorMessage);
     }
+    notifyListeners();
   }
 
-  login(String cpf, String senha) async {
-    try {
-      await _auth.signInWithEmailAndPassword(email: cpf, password: senha);
-      _getUser();
-    } on FirebaseAuthException catch (e) {
-      if(e.code == 'user-not-found') {
-        throw AuthException('Cpf não encontrado!');
-      } else if (e.code == 'wrong-password') {
-        throw AuthException('Senha incorreta!');
-      }
-    }
+  Future logout() async {
+    await firebaseAuth.signOut();
   }
 
-  logout() async {
-    await _auth.signOut();
-    _getUser();
+  void setLoading(value) {
+    _isLoading = value;
+    notifyListeners();
   }
+
+  void setMessage(message) {
+    _errorMessage = message;
+    notifyListeners();
+  }
+
+  Stream<User?> get user =>
+      firebaseAuth.authStateChanges().map((event) => event);
 }
+
+*/
