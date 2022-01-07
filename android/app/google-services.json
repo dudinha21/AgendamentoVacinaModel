@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "680327812167",
-    "project_id": "agendamento-vacina-dd216",
-    "storage_bucket": "agendamento-vacina-dd216.appspot.com"
+    "project_number": "791140166103",
+    "project_id": "vacinaiapp",
+    "storage_bucket": "vacinaiapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:680327812167:android:74456883b1500995374d62",
+        "mobilesdk_app_id": "1:791140166103:android:63284d8e95fff017eb4392",
         "android_client_info": {
-          "package_name": "com.example.agendamento_vacina"
+          "package_name": "com.example.vacinai_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "680327812167-d53nsol0uqjkbfs1s7g10aai3josh7go.apps.googleusercontent.com",
+          "client_id": "791140166103-akk4og0m5ofdr79lpl2mffghbj7g4htp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD9tFov8OEBTI8pBOp-jWKonrbC2ZNjQi8"
+          "current_key": "AIzaSyCN0U4QwUzDllBYIGgQaPx-igdrnACaaSM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "680327812167-d53nsol0uqjkbfs1s7g10aai3josh7go.apps.googleusercontent.com",
+              "client_id": "791140166103-akk4og0m5ofdr79lpl2mffghbj7g4htp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
