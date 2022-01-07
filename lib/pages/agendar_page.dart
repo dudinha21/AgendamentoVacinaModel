@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app_agendamento_vacina/models/agendamento.dart';
+import 'package:vacinai_app/models/agendamento.dart';
 
 class AgendarPage extends StatefulWidget {
   Agendamento agendamento;
