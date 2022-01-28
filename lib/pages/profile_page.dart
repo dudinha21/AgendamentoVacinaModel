@@ -109,5 +109,14 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ],
     ),
+    bottomNavigationBar: BottomNavigationBar(
+        currentIndex: paginaAtual,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.date_range_outlined), label: 'Meu perfil'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.info_outline), label: 'Vacinas'),
+        ],
+      ),
   );
 }
